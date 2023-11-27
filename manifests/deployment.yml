@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: lpanfilovapipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lpanfilovapipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: lpanfilovapipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: lpanfilovapipelinesjavascriptdocker 
+          image: lpanfilovaregistry.azurecr.io/lpanfilovapipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
